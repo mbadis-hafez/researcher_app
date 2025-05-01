@@ -19,7 +19,7 @@ Route::get('/', function () {
 });
 
 
-Route::group(['prefix' => 'admin'], function () {
+Route::group([], function () {
     Voyager::routes();
 
 
