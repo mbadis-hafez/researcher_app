@@ -15,11 +15,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return app(\TCG\Voyager\Http\Controllers\VoyagerAuthController::class)->login();
 });
 
 
-Route::group([], function () {
+Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 
 
