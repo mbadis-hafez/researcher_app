@@ -74,7 +74,7 @@
                                         @endphp
 
                                         <div class="form-group col-md-12 {{ $errors->has('owner_id') ? 'has-error' : '' }}">
-                                            <label class="control-label">Artist</label>
+                                            <label class="control-label">Artist / إسم الفنان</label>
                                             <select class="form-control select2" name="owner_id" id="artist-select">
                                                 <option value="">-- Select Artist --</option>
                                                 @foreach (App\Artist::orderBy('name')->get() as $artist)
