@@ -33,7 +33,7 @@ class ArtworksResearcherWidget extends AbstractWidget
         $modelInstance = app($modelClass);
 
         // Select only the required columns: image, title, year, and location
-        $query = $modelInstance->newQuery()->select(['id', 'image', 'title', 'year', 'location'])->with($relationships);
+        $query = $modelInstance->newQuery()->select(['id', 'image', 'title', 'year','medium','dimension','source_book','source_photo','other_source', 'location'])->with($relationships);
 
         // Apply search filter (basic full-table search)
         if ($search) {
@@ -53,7 +53,7 @@ class ArtworksResearcherWidget extends AbstractWidget
 
         // Filter the browseRows to show only the selected columns
         $dataType->browseRows = $dataType->browseRows->filter(function ($row) {
-            return in_array($row->field, ['image', 'title', 'year', 'location']);
+            return in_array($row->field, ['image', 'title', 'year','medium','dimension','source_book','source_photo','other_source', 'location']);
         });
 
         return view('voyager::widgets.artworks-researcher', [
