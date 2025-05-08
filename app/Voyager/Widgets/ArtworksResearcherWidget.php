@@ -56,7 +56,7 @@ class ArtworksResearcherWidget extends AbstractWidget
             return in_array($row->field, ['image', 'title', 'year', 'location']);
         });
 
-        return view('voyager::bread.browse', [
+        return view('voyager::widgets.artworks-researcher', [
             'dataType' => $dataType,
             'dataTypeContent' => $dataTypeContent,
             'isModelTranslatable' => false,
